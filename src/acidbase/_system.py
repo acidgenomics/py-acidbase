@@ -99,7 +99,7 @@ def git_current_branch() -> str | None:
     try:
         result = shell("git rev-parse --abbrev-ref HEAD", check=True)
         return result.stdout.strip()
-    except subprocess.CalledProcessError, FileNotFoundError:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         return None
 
 
@@ -119,12 +119,12 @@ def git_default_branch() -> str | None:
             check=True,
         )
         return result.stdout.strip().split("/")[-1]
-    except subprocess.CalledProcessError, FileNotFoundError:
+    except (subprocess.CalledProcessError, FileNotFoundError):
         pass
     for name in ("main", "master"):
         try:
             shell(f"git show-ref --verify --quiet refs/heads/{name}")
             return name
-        except subprocess.CalledProcessError, FileNotFoundError:
+        except (subprocess.CalledProcessError, FileNotFoundError):
             continue
     return None
