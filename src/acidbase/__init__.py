@@ -1,7 +1,5 @@
 """AcidBase -- Base functions for Acid Genomics packages."""
 
-__version__ = "0.7.5"
-
 # ── Constants ────────────────────────────────────────────────────────
 # ── Cache ────────────────────────────────────────────────────────────
 from acidbase._cache import pkg_cache_dir
