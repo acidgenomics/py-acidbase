@@ -24,6 +24,7 @@ classifiers = [
 dependencies = ["numpy", "packaging", "pandas", "psutil", "scipy"]
 
 [project.optional-dependencies]
+docs = ["myst-parser", "numpydoc", "pydata-sphinx-theme", "sphinx"]
 develop = [
   "bumpver",
   "coverage",
