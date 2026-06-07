@@ -86,6 +86,7 @@ from acidbase._system import (
     cpus,
     git_current_branch,
     git_default_branch,
+    quietly,
     ram,
     random_string,
     shell,
@@ -95,19 +96,74 @@ from acidbase._system import (
 from acidbase._version import (
     major_minor_version,
     major_version,
+    minor_version,
     sanitize_version,
 )
 
 __all__ = [
+    # path string
+    "add_to_path_end",
+    "add_to_path_start",
     # constants
     "barcode_pattern",
+    # file
+    "basename_sans_ext",
+    "collapse_to_path_string",
+    # compression
+    "compress",
+    # system
+    "cpus",
+    "decompress",
+    # download
+    "download",
+    # data
+    "dupes",
+    # math
+    "euclidean",
+    "file_depth",
+    "file_ext",
+    "fold_change_to_log_ratio",
     "genome_metadata_names",
+    "geometric_mean",
+    "git_current_branch",
+    "git_default_branch",
+    "headtail",
+    "init_dir",
+    "intersect_all",
+    "intersection_matrix",
+    "keep_only_atomic_cols",
     "lane_pattern",
+    "log_ratio_to_fold_change",
+    # version
+    "major_minor_version",
+    "major_version",
+    "match_all",
+    "match_nested",
     "metadata_denylist",
     "metrics_cols",
-    "update_message",
+    "minor_version",
+    "not_dupes",
+    "parent_dir",
+    "parent_directory",
+    "paste_url",
+    # cache
+    "pkg_cache_dir",
     # string
     "print_string",
+    "quietly",
+    "ram",
+    "random_string",
+    "ranked_matrix",
+    "realpath",
+    "remove_from_path",
+    "sanitize_version",
+    "sem",
+    "shell",
+    # display
+    "show_header",
+    "show_slot_info",
+    "simple_class",
+    "split_path_string",
     "str_extract",
     "str_extract_all",
     "str_match",
@@ -116,62 +172,10 @@ __all__ = [
     "str_remove_empty",
     "str_replace_na",
     "str_split",
-    "truncate_string",
-    # file
-    "basename_sans_ext",
-    "file_depth",
-    "file_ext",
-    "init_dir",
-    "parent_dir",
-    "parent_directory",
-    "realpath",
     "tempdir2",
-    "unlink2",
-    # math
-    "euclidean",
-    "fold_change_to_log_ratio",
-    "geometric_mean",
-    "log_ratio_to_fold_change",
-    "ranked_matrix",
-    "sem",
-    "zscore",
-    # data
-    "dupes",
-    "headtail",
-    "intersect_all",
-    "intersection_matrix",
-    "keep_only_atomic_cols",
-    "match_all",
-    "match_nested",
-    "not_dupes",
-    # path string
-    "add_to_path_end",
-    "add_to_path_start",
-    "collapse_to_path_string",
-    "remove_from_path",
-    "split_path_string",
+    "truncate_string",
     "unique_path_string",
-    # system
-    "cpus",
-    "git_current_branch",
-    "git_default_branch",
-    "ram",
-    "random_string",
-    "shell",
-    # version
-    "major_minor_version",
-    "major_version",
-    "sanitize_version",
-    # compression
-    "compress",
-    "decompress",
-    # download
-    "download",
-    "paste_url",
-    # display
-    "show_header",
-    "show_slot_info",
-    "simple_class",
-    # cache
-    "pkg_cache_dir",
+    "unlink2",
+    "update_message",
+    "zscore",
 ]
