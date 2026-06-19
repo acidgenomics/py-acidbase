@@ -93,12 +93,12 @@ class TestStrPad:
 
     def test_invalid_pad(self) -> None:
         """Multi-character pad raises ValueError."""
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="pad"):
             str_pad("x", 5, pad="ab")
 
     def test_invalid_side(self) -> None:
         """Invalid side argument raises ValueError."""
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="side"):
             str_pad("x", 5, side="middle")
 
 

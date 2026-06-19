@@ -1,11 +1,14 @@
 """System / shell utility functions."""
 
-from __future__ import annotations
-
+import io
 import multiprocessing
 import secrets
 import string
 import subprocess
+import sys
+import warnings
+from collections.abc import Generator
+from contextlib import contextmanager
 
 import psutil
 
@@ -128,3 +131,35 @@ def git_default_branch() -> str | None:
         except (subprocess.CalledProcessError, FileNotFoundError):
             continue
     return None
+
+
+@contextmanager
+def quietly() -> Generator[None]:
+    """Suppress console output and warnings within a block.
+
+    Redirects ``sys.stdout`` and ``sys.stderr`` to null and suppresses
+    all Python warnings. Matches R's ``quietly()`` context manager.
+
+    Yields
+    ------
+    None
+
+    Examples
+    --------
+    >>> import sys
+    >>> with quietly():
+    ...     print("this is suppressed")
+    >>> # nothing printed
+    """
+    with (
+        warnings.catch_warnings(),
+        io.StringIO() as _out,
+        io.StringIO() as _err,
+    ):
+        warnings.simplefilter("ignore")
+        old_out, old_err = sys.stdout, sys.stderr
+        sys.stdout, sys.stderr = _out, _err
+        try:
+            yield
+        finally:
+            sys.stdout, sys.stderr = old_out, old_err

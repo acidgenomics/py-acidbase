@@ -1,6 +1,6 @@
 """Version-string utilities."""
 
-from __future__ import annotations
+import warnings
 
 from packaging.version import Version
 
@@ -33,6 +33,29 @@ def major_minor_version(version: str) -> str:
     """
     v = Version(version)
     return f"{v.major}.{v.minor}"
+
+
+def minor_version(version: str) -> str:
+    """Return ``major.minor`` from a version string.
+
+    Parameters
+    ----------
+    version : str
+
+    Returns
+    -------
+    str
+
+    .. deprecated::
+        Use :func:`major_minor_version` instead. This function is
+        preserved for R API parity only.
+    """
+    warnings.warn(
+        "minor_version() is deprecated; use major_minor_version() instead.",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return major_minor_version(version)
 
 
 def sanitize_version(version: str) -> str:

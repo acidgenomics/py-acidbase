@@ -44,6 +44,6 @@ class TestCompress:
     def test_invalid_method(self) -> None:
         """Invalid method raises ValueError."""
         original = _make_tmp_file()
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="method"):
             compress(original, method="rar")
         os.unlink(original)

@@ -181,26 +181,31 @@ def match_nested(
     return None
 
 
-def headtail(x: pd.DataFrame | list | np.ndarray, n: int = 2) -> None:
-    """Print the first and last *n* elements / rows.
+def headtail(
+    x: pd.DataFrame | list | np.ndarray,
+    n: int = 2,
+) -> pd.DataFrame | list | np.ndarray:
+    """Return (and print) the first and last *n* elements / rows.
 
     Parameters
     ----------
     x : DataFrame, list, or array
     n : int
+
+    Returns
+    -------
+    DataFrame, list, or numpy.ndarray
+        Combined head+tail of ``x``, matching the input type.
     """
     if isinstance(x, pd.DataFrame):
-        print(x.head(n))
-        print("---")
-        print(x.tail(n))
-    elif isinstance(x, np.ndarray):
-        print(x[:n])
-        print("...")
-        print(x[-n:])
-    else:
-        seq = list(x)
-        head = seq[:n]
-        tail = seq[-n:]
-        print(head)
-        print("...")
-        print(tail)
+        out = pd.concat([x.head(n), x.tail(n)])
+        print(out)
+        return out
+    if isinstance(x, np.ndarray):
+        out = np.concatenate([x[:n], x[-n:]])
+        print(out)
+        return out
+    seq = list(x)
+    out = seq[:n] + seq[-n:]
+    print(out)
+    return out
