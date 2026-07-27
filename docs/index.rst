@@ -12,9 +12,14 @@ Base functions for Acid Genomics packages.
 Installation
 ------------
 
+This package is hosted at `python.acidgenomics.com <https://python.acidgenomics.com/>`_.
+We recommend using `uv <https://docs.astral.sh/uv/>`_ to install.
+
 .. code-block:: bash
 
-   pip install acidbase
+   uv pip install \
+       --index-url 'https://python.acidgenomics.com/simple/' \
+       acidbase
 
 Links
 -----
