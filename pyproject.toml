@@ -40,6 +40,7 @@ develop = [
 
 [project.urls]
 Homepage = "https://github.com/acidgenomics/py-acidbase"
+Documentation = "https://python.acidgenomics.com/acidbase/"
 Repository = "https://github.com/acidgenomics/py-acidbase"
 Changelog = "https://github.com/acidgenomics/py-acidbase/blob/main/CHANGELOG.md"
 
@@ -185,7 +186,7 @@ convention = "numpy"
 allow-magic-value-types = ["bytes", "int", "str"]
 max-args = 30
 max-branches = 30
-max-positional-args = 2
+max-positional-args = 4
 max-statements = 100
 
 [tool.ty]
