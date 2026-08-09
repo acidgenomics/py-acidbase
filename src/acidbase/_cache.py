@@ -18,12 +18,14 @@ def pkg_cache_dir(
     Parameters
     ----------
     package : str
+        Subdirectory name to create under the cache root.
     xdg : bool
         Use ``$XDG_CACHE_HOME`` (default ``True``).
 
     Returns
     -------
     str
+        Absolute path to the created cache directory.
     """
     if xdg:
         base = Path(os.environ.get("XDG_CACHE_HOME", Path.home() / ".cache"))

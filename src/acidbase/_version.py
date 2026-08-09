@@ -11,10 +11,12 @@ def major_version(version: str) -> str:
     Parameters
     ----------
     version : str
+        Version string to parse.
 
     Returns
     -------
     str
+        Major version component.
     """
     v = Version(version)
     return str(v.major)
@@ -26,10 +28,12 @@ def major_minor_version(version: str) -> str:
     Parameters
     ----------
     version : str
+        Version string to parse.
 
     Returns
     -------
     str
+        ``"major.minor"`` component.
     """
     v = Version(version)
     return f"{v.major}.{v.minor}"
@@ -41,10 +45,12 @@ def minor_version(version: str) -> str:
     Parameters
     ----------
     version : str
+        Version string to parse.
 
     Returns
     -------
     str
+        ``"major.minor"`` component.
 
     .. deprecated::
         Use :func:`major_minor_version` instead. This function is
@@ -64,9 +70,11 @@ def sanitize_version(version: str) -> str:
     Parameters
     ----------
     version : str
+        Version string to normalize.
 
     Returns
     -------
     str
+        PEP 440-normalized version string.
     """
     return str(Version(version))

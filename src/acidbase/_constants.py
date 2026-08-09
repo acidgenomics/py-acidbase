@@ -1,4 +1,4 @@
-"""Constants ported from AcidBase R package."""
+"""Shared regex patterns and constants for AcidBase."""
 
 import re
 
