@@ -24,6 +24,7 @@ def cpus(n: int = 1) -> int:
     Returns
     -------
     int
+        Number of CPUs to use.
     """
     available = multiprocessing.cpu_count()
     if n <= 0:
@@ -39,6 +40,7 @@ def ram() -> float:
     Returns
     -------
     float
+        Total system RAM, in GiB.
 
     Raises
     ------
@@ -54,10 +56,12 @@ def random_string(n: int = 8) -> str:
     Parameters
     ----------
     n : int
+        Length of the generated string.
 
     Returns
     -------
     str
+        Random alphanumeric string of length ``n``.
     """
     alphabet = string.ascii_letters + string.digits
     return "".join(secrets.choice(alphabet) for _ in range(n))
@@ -74,13 +78,17 @@ def shell(
     Parameters
     ----------
     command : str
+        Shell command to run.
     check : bool
         Raise on non-zero exit code (default ``True``).
     capture_output : bool
+        Capture stdout/stderr instead of streaming to the console.
 
     Returns
     -------
     subprocess.CompletedProcess
+        Completed process, with ``stdout``/``stderr`` populated when
+        ``capture_output`` is ``True``.
     """
     return subprocess.run(
         command,
@@ -115,6 +123,7 @@ def git_default_branch() -> str | None:
     Returns
     -------
     str or None
+        Default branch name, or ``None`` if it can't be determined.
     """
     try:
         result = shell(

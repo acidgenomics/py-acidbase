@@ -16,6 +16,7 @@ def dupes(x: Sequence[Hashable]) -> list:
     Parameters
     ----------
     x : sequence
+        Values to check for duplicates.
 
     Returns
     -------
@@ -34,10 +35,12 @@ def not_dupes(x: Sequence[Hashable]) -> list:
     Parameters
     ----------
     x : sequence
+        Values to check for uniqueness.
 
     Returns
     -------
     list
+        Sorted list of values appearing exactly once.
     """
     seen: dict[Hashable, int] = {}
     for item in x:
@@ -51,10 +54,12 @@ def intersect_all(*args: Sequence) -> list:
     Parameters
     ----------
     *args : sequence
+        Sequences to intersect.
 
     Returns
     -------
     list
+        Sorted list of values common to every sequence in ``args``.
     """
     if not args:
         return []
@@ -76,6 +81,8 @@ def intersection_matrix(*args: Sequence, names: Sequence[str] | None = None) -> 
     Returns
     -------
     pandas.DataFrame
+        Boolean matrix indexed by the union of all items, one column per
+        input collection.
     """
     if names is None:
         names = [f"set{i + 1}" for i in range(len(args))]
@@ -95,10 +102,12 @@ def keep_only_atomic_cols(df: pd.DataFrame) -> pd.DataFrame:
     Parameters
     ----------
     df : pandas.DataFrame
+        Input DataFrame.
 
     Returns
     -------
     pandas.DataFrame
+        ``df`` with only its atomic-valued columns.
     """
     atomic_cols = []
     for col in df.columns:
@@ -190,7 +199,9 @@ def headtail(
     Parameters
     ----------
     x : DataFrame, list, or array
+        Input to summarize.
     n : int
+        Number of elements/rows to take from each end.
 
     Returns
     -------

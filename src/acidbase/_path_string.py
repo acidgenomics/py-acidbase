@@ -14,10 +14,12 @@ def collapse_to_path_string(*paths: str) -> str:
     Parameters
     ----------
     *paths : str
+        Path entries to join.
 
     Returns
     -------
     str
+        ``paths`` joined with ``os.pathsep``.
     """
     return os.pathsep.join(paths)
 
@@ -28,10 +30,12 @@ def split_path_string(path_string: str) -> list[str]:
     Parameters
     ----------
     path_string : str
+        Colon-separated path string, e.g. ``$PATH``.
 
     Returns
     -------
     list[str]
+        Individual path entries.
     """
     return path_string.split(os.pathsep)
 
@@ -42,10 +46,12 @@ def unique_path_string(path_string: str) -> str:
     Parameters
     ----------
     path_string : str
+        Colon-separated path string.
 
     Returns
     -------
     str
+        ``path_string`` with duplicate entries removed, order preserved.
     """
     seen: set[str] = set()
     unique: list[str] = []
@@ -62,11 +68,14 @@ def add_to_path_end(path_string: str, new_path: str) -> str:
     Parameters
     ----------
     path_string : str
+        Colon-separated path string.
     new_path : str
+        Entry to append.
 
     Returns
     -------
     str
+        Updated path string.
     """
     parts = split_path_string(path_string)
     if new_path not in parts:
@@ -80,11 +89,14 @@ def add_to_path_start(path_string: str, new_path: str) -> str:
     Parameters
     ----------
     path_string : str
+        Colon-separated path string.
     new_path : str
+        Entry to prepend. Moved to the front if already present.
 
     Returns
     -------
     str
+        Updated path string.
     """
     parts = split_path_string(path_string)
     if new_path in parts:
@@ -99,11 +111,14 @@ def remove_from_path(path_string: str, target: str) -> str:
     Parameters
     ----------
     path_string : str
+        Colon-separated path string.
     target : str
+        Entry to remove.
 
     Returns
     -------
     str
+        Updated path string with ``target`` removed.
     """
     parts = [p for p in split_path_string(path_string) if p != target]
     return collapse_to_path_string(*parts)

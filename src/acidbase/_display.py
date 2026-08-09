@@ -9,10 +9,12 @@ def show_slot_info(obj: object) -> str:
     Parameters
     ----------
     obj : object
+        Object whose ``__dict__`` attributes are summarized.
 
     Returns
     -------
     str
+        One ``"  name (Type)"`` line per attribute, sorted by name.
     """
     lines: list[str] = []
     attrs = vars(obj) if hasattr(obj, "__dict__") else {}
@@ -28,11 +30,15 @@ def show_header(text: str, width: int = 72) -> str:
     Parameters
     ----------
     text : str
+        Header text.
     width : int
+        Total width of the rendered line.
 
     Returns
     -------
     str
+        A single line: three dashes, ``text``, then dashes padding to
+        ``width``.
     """
     return f"{'─' * 3} {text} {'─' * (width - len(text) - 5)}"
 
@@ -43,9 +49,11 @@ def simple_class(obj: object) -> str:
     Parameters
     ----------
     obj : object
+        Object to inspect.
 
     Returns
     -------
     str
+        ``type(obj).__name__``.
     """
     return type(obj).__name__

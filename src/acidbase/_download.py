@@ -16,6 +16,7 @@ def download(
     Parameters
     ----------
     url : str
+        URL to download.
     dest : str or Path, optional
         Destination path.  Defaults to the current directory using the
         URL basename.
@@ -39,9 +40,12 @@ def paste_url(*parts: str) -> str:
     Parameters
     ----------
     *parts : str
+        URL path segments to join.
 
     Returns
     -------
     str
+        ``parts`` joined by ``/``, with leading/trailing slashes on each
+        part stripped.
     """
     return "/".join(p.strip("/") for p in parts)

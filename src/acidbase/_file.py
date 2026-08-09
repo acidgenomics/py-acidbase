@@ -19,10 +19,12 @@ def basename_sans_ext(path: str | Path) -> str:
     Parameters
     ----------
     path : str or Path
+        File path.
 
     Returns
     -------
     str
+        Basename with all recognized extensions removed.
     """
     name = Path(path).name
     name = _compress_ext_pattern.sub("", name)
@@ -38,6 +40,7 @@ def file_ext(path: str | Path) -> str:
     Parameters
     ----------
     path : str or Path
+        File path.
 
     Returns
     -------
@@ -58,10 +61,12 @@ def file_depth(path: str | Path) -> int:
     Parameters
     ----------
     path : str or Path
+        File or directory path.
 
     Returns
     -------
     int
+        Number of path components after the root.
     """
     return len(Path(path).parts) - 1
 
@@ -72,10 +77,12 @@ def realpath(path: str | Path) -> str:
     Parameters
     ----------
     path : str or Path
+        Path to resolve.
 
     Returns
     -------
     str
+        Absolute, symlink-resolved path.
 
     Raises
     ------
@@ -94,6 +101,7 @@ def init_dir(path: str | Path) -> str:
     Parameters
     ----------
     path : str or Path
+        Directory path to create.
 
     Returns
     -------
@@ -114,6 +122,7 @@ def tempdir2(*, prefix: str | None = None) -> str:
     Parameters
     ----------
     prefix : str, optional
+        Prefix for the generated directory name.
 
     Returns
     -------
@@ -129,6 +138,7 @@ def unlink2(path: str | Path) -> bool:
     Parameters
     ----------
     path : str or Path
+        Path to delete.
 
     Returns
     -------
@@ -151,12 +161,14 @@ def parent_directory(path: str | Path, n: int = 1) -> str:
     Parameters
     ----------
     path : str or Path
+        Starting path.
     n : int
         Number of levels to go up (default ``1``).
 
     Returns
     -------
     str
+        Resolved path of the *n*-th parent directory.
     """
     p = Path(path).resolve()
     for _ in range(n):

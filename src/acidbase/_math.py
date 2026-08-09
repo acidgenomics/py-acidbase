@@ -10,10 +10,12 @@ def euclidean(a: np.ndarray, b: np.ndarray) -> float:
     Parameters
     ----------
     a, b : array-like
+        Vectors of equal length to compare.
 
     Returns
     -------
     float
+        Euclidean distance between ``a`` and ``b``.
     """
     a = np.asarray(a, dtype=float)
     b = np.asarray(b, dtype=float)
@@ -44,6 +46,7 @@ def geometric_mean(
     Returns
     -------
     float
+        Geometric mean of ``x``.
 
     Notes
     -----
@@ -73,10 +76,12 @@ def sem(x: np.ndarray) -> float:
     Parameters
     ----------
     x : array-like
+        Numeric vector.
 
     Returns
     -------
     float
+        Standard error of the mean of ``x``.
     """
     x = np.asarray(x, dtype=float)
     return float(np.std(x, ddof=1) / np.sqrt(len(x)))
@@ -93,6 +98,7 @@ def zscore(x: np.ndarray) -> np.ndarray:
     Returns
     -------
     numpy.ndarray
+        Z-scores, same shape as ``x``.
     """
     x = np.asarray(x, dtype=float)
     if x.ndim == 1:
@@ -114,6 +120,7 @@ def fold_change_to_log_ratio(x: float | np.ndarray, base: int = 2) -> float | np
     Returns
     -------
     float or numpy.ndarray
+        Log-ratio values.
 
     Notes
     -----
@@ -141,6 +148,7 @@ def log_ratio_to_fold_change(x: float | np.ndarray, base: int = 2) -> float | np
     Returns
     -------
     float or numpy.ndarray
+        Fold-change values.
 
     Notes
     -----
