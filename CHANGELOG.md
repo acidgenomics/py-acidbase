@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 (2026-09-01)
+
+### Changes
+
+- Rename the PyPI distribution to `acidgenomics-acidbase`. The import name is
+  unchanged: `import acidbase` still works.
+- Publish to PyPI instead of `python.acidgenomics.com` only.
+
 ## 0.1.0 (2026-06-19)
 
 ### Changes

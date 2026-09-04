@@ -8,26 +8,18 @@ Base functions for [Acid Genomics](https://acidgenomics.com) packages.
 
 ### [uv][] method
 
-This is a [Python][] package hosted at [python.acidgenomics.com][].
+This is a [Python][] package hosted on [PyPI][] as `acidgenomics-acidbase`.
+The import name is unchanged: `acidbase`.
 We recommend using [uv][] to install.
 
 ```sh
-uv pip install \
-    --index-url 'https://python.acidgenomics.com/simple/' \
-    acidbase
+uv add acidgenomics-acidbase
 ```
 
-Or add the index to your project's `pyproject.toml`:
-
-```toml
-[[tool.uv.index]]
-url = "https://python.acidgenomics.com/simple/"
-```
-
-Then install:
+Or with [pip][]:
 
 ```sh
-uv add acidbase
+pip install acidgenomics-acidbase
 ```
 
 ### [Conda][] method
@@ -53,6 +45,7 @@ Apache-2.0 — Copyright 2026 Acid Genomics LLC — see [LICENSE](LICENSE).
 
 [bioconda]: https://bioconda.github.io/
 [conda]: https://docs.conda.io/
+[pip]: https://pip.pypa.io/
+[pypi]: https://pypi.org/project/acidgenomics-acidbase/
 [python]: https://www.python.org/
-[python.acidgenomics.com]: https://python.acidgenomics.com
 [uv]: https://docs.astral.sh/uv/

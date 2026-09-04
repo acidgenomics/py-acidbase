@@ -10,26 +10,18 @@ manipulation, system/shell helpers, and version parsing.
 
 ### uv method
 
-This package is hosted at [python.acidgenomics.com](https://python.acidgenomics.com/).
+This package is hosted on [PyPI](https://pypi.org/project/acidgenomics-acidbase/)
+as `acidgenomics-acidbase`. The import name is unchanged: `acidbase`.
 We recommend using [uv](https://docs.astral.sh/uv/) to install.
 
 ```sh
-uv pip install \
-    --index-url 'https://python.acidgenomics.com/simple/' \
-    acidbase
+uv add acidgenomics-acidbase
 ```
 
-Or add the index to your project's `pyproject.toml`:
-
-```toml
-[[tool.uv.index]]
-url = "https://python.acidgenomics.com/simple/"
-```
-
-Then install:
+Or with [pip](https://pip.pypa.io/):
 
 ```sh
-uv add acidbase
+pip install acidgenomics-acidbase
 ```
 
 ### Conda method
