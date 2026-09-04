@@ -22,9 +22,14 @@ napoleon_google_docstring = False
 numpydoc_show_class_members = False
 html_theme = "acidgenomics"
 html_theme_path = ["_themes"]
+html_title = "acidbase"
 html_theme_options = {
     "sitesearch": "python.acidgenomics.com",
     "repo_url": "https://github.com/acidgenomics/py-acidbase",
+    "copyright_start_year": "2019",
+    "license_name": "Apache 2.0",
+    "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+    "license_file_url": "https://github.com/acidgenomics/py-acidbase/blob/main/LICENSE",
 }
 html_show_sourcelink = False
 html_show_sphinx = False

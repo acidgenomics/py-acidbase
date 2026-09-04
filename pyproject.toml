@@ -3,7 +3,7 @@ build-backend = "uv_build"
 requires = ["uv_build>=0.11,<1"]
 
 [project]
-name = "acidbase"
+name = "acidgenomics-acidbase"
 version = "0.1.0"
 description = "Base functions for Acid Genomics packages."
 readme = "README.md"
